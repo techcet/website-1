@@ -35,7 +35,7 @@ Service Catalog is built on the [Open Service Broker API](https://github.com/ope
 
 It communicates with Service Brokers via the OSB API and acts as an intermediary for the Kubernetes API Server in order to negotiate the initial provisioning and return the credentials necessary for the application to use the Managed Service.
 
-![Service Catalog Architecture](/images/docs/service-catalog-architecture.png)
+![Service Catalog Architecture](/images/docs/service-catalog-architecture.svg)
 
 
 ### API Resources
