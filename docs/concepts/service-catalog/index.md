@@ -27,13 +27,8 @@ Their application can simply use it as a service.
 
 ## Architecture
 
-Service Catalog is built on the [Open Service Broker API](https://github.com/openservicebrokerapi/servicebroker) and is implemented as a set of deployments: 
-
-* Extension API server
-* Controller manager
-* Etcd operator
-
-It communicates with Service Brokers via the OSB API and acts as an intermediary for the Kubernetes API Server in order to negotiate the initial provisioning and return the credentials necessary for the application to use the Managed Service.
+Service Catalog is built on the [Open Service Broker API](https://github.com/openservicebrokerapi/servicebroker) and is implemented as an extension API server, controller manager, and etcd operator.
+It communicates with Service Brokers via the OSB API and acts as an intermediary for the Kubernetes API Server in order to negotiate the initial provisioning and return the credentials necessary for the application to use a Managed Service.
 
 ![Service Catalog Architecture](/images/docs/service-catalog-architecture.svg)
 
@@ -75,15 +70,13 @@ Service Catalog supports these methods of authentication:
 
 The Cluster Operator can use the Service Catalog API Resources to provision Managed Services and make them available within the Kubernetes cluster. The steps involved are:
 
-1. Add a `ServiceBroker` resource.
-2. List the Managed Services available from a Service Broker.
-3. Provision a new instance of the Managed Service.
-4. Bind to the Managed Service, which returns the connection credentials.
-5. Map the connection credentials into the Kubernetes application.
+1. Listing the Managed Services available from a Service Broker.
+1. Provisioning a new instance of the Managed Service.
+1. Binding to the Managed Service, which returns the connection credentials.
 
-### Adding a ServiceBroker resource
+### Listing Managed Services
 
-A `ServiceBroker` resource contains the URL and connection details necessary to access a Service Broker endpoint. It must be created within the `servicecatalog.k8s.io` group.
+The Cluster Operator must first create a `ServiceBroker` resource within the `servicecatalog.k8s.io` group. This resource contains the URL and connection details necessary to access a Service Broker endpoint.
 
 The following is an example of a `ServiceBroker` resource:
 
@@ -91,35 +84,49 @@ The following is an example of a `ServiceBroker` resource:
 apiVersion: servicecatalog.k8s.io/v1alpha1
 kind: ServiceBroker
 metadata:
-  name: gcp-broker
+  name: cloud-broker
 spec:
-  url:  https://servicebroker.googleapis.com/v1alpha1/projects/service-catalog/brokers/default
+  url:  https://servicebroker.somecloudprovider.com/v1alpha1/projects/service-catalog/brokers/default
   # Describes the secret which contains the short-lived bearer token
   authInfo:
     bearer:
       secretRef:
-        name: gcp-svc-account-secret
+        name: cloud-svc-account-secret
         namespace: service-catalog
 ```
 
-### Listing Managed Services
+1. Once the `ServiceBroker` resource is added to Service Catalog, it triggers a *List Services* call to the external Service Broker.
+1. The Service Broker returns a list of available Managed Services, which is cached locally in a `ServiceClass` resource.
+1. The Cluster Operator can then get the list of available Managed Services using the following command:
 
-1. The Cluster Operator must first add ServiceBroker Resources to the Service Catalog API Server. These resources identify available Service Brokers and point to their URL endpoints.
-1. Service Catalog then requests a list of Services from the Service Broker.
-1. The Service Broker returns a list of Services to the ServiceClass resource, which is created and persisted in the Service Catalog API Server.
-1. The Service Consumer can then locally query the ServiceClass Resource for a list of available Services.
+        kubectl get serviceclasses
 
-![List Services](/images/docs/service-catalog-list.png){:height="80%" width="80%"}
+![List Services](/images/docs/service-catalog-list.svg){:height="80%" width="80%"}
 
-### Provisioning a new Service
 
-1. The Service Consumer provisions a new instance by sending a POST command to the Service Catalog API Server, which creates and persists an Instance Resource.
-1. Service Catalog then requests an instance from the Service Broker by sending an PUT command.
-1. The Service Broker creates a new instance of the Service. 
-1. If the creation was successful, the Service Broker returns an HTTP 200 response.
+### Provisioning a new instance
+
+The Cluster Operator can initiate the provisioning of a new instance by creating a `ServiceInstance` resource. 
+
+The following is an example of a `ServiceInstance` resource:
+
+```yaml
+apiVersion: servicecatalog.k8s.io/v1alpha1
+kind: ServiceInstance
+metadata:
+  name: cloud-postgresql-instance
+  namespace: cloud-apps
+spec:
+  # References one of the previously returned services
+  serviceClassName: postgresql
+  planName: postgresql-plan
+```
+
+1. Once the `ServiceInstance` resource is created, Service Catalog initiates a *Provision Instance* call to the external Service Broker.
+1. The Service Broker creates a new instance of the Service.
 1. The Service Consumer can then check the status of the instance to see if it is ready.
 
-![Provision a Service](/images/docs/service-catalog-provision.png){:height="80%" width="80%"}
+![Provision a Service](/images/docs/service-catalog-provision.svg){:height="80%" width="80%"}
 
 ### Binding to a Service
 

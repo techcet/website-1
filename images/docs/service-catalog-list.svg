@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="61 512 571 375" width="571pt" height="375pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="66 512 566 375" width="566pt" height="375pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata> Produced by OmniGraffle 7.5 
-    <dc:date>2017-10-26 22:41:04 +0000</dc:date>
+    <dc:date>2017-11-06 20:32:54 +0000</dc:date>
   </metadata>
   <defs>
     <filter id="Shadow" filterUnits="userSpaceOnUse">
@@ -45,7 +45,6 @@
         <xl:use xl:href="#id114_Graphic" filter="url(#Shadow)"/>
         <xl:use xl:href="#id115_Graphic" filter="url(#Shadow)"/>
         <xl:use xl:href="#id66_Graphic" filter="url(#Shadow)"/>
-        <xl:use xl:href="#id116_Graphic" filter="url(#Shadow)"/>
       </g>
       <line x1="118.75" y1="535.5" x2="118.75" y2="885.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
       <line x1="324.25" y1="535.5" x2="324.25" y2="885.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
@@ -66,19 +65,18 @@
       <text transform="translate(487.75 517.8037)" fill="black">
         <tspan font-family="Arial" font-size="12" font-weight="bold" x=".13964844" y="11" textLength="84.7207">Service Broker</tspan>
       </text>
-      <rect x="380.98875" y="609.9441" width="77" height="25" fill="white"/>
-      <text transform="translate(385.98875 615.2478)" fill="black">
-        <tspan font-family="Arial" font-size="12" font-weight="500" x=".25976562" y="11" textLength="24.66797">GET</tspan>
-        <tspan font-family="Arial" font-size="12" font-weight="500" x="24.710938" y="11" textLength="42.029297"> catalog</tspan>
+      <rect x="379.98875" y="609.9441" width="79" height="25" fill="white"/>
+      <text transform="translate(384.98875 615.2478)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="500" x=".4892578" y="11" textLength="68.021484">List Services</tspan>
       </text>
       <rect x="390.2893" y="704.5658" width="59" height="25" fill="white"/>
       <text transform="translate(395.2893 709.8695)" fill="black">
         <tspan font-family="Arial" font-size="12" font-weight="500" x=".4941406" y="11" textLength="48.01172">service[ ]</tspan>
       </text>
-      <rect x="292.0526" y="562.1922" width="62" height="39" fill="white"/>
-      <text transform="translate(297.0526 567.2996)" fill="black">
-        <tspan font-family="Arial" font-size="12" font-weight="500" x="8.328125" y="11" textLength="35.34375">Broker</tspan>
-        <tspan font-family="Arial" font-size="12" font-weight="500" x=".32128906" y="25.392578" textLength="51.35742">Resource</tspan>
+      <rect x="280.0526" y="562.1922" width="86" height="39" fill="white"/>
+      <text transform="translate(285.0526 567.2996)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="500" x=".32128906" y="11" textLength="75.35742">ServiceBroker</tspan>
+        <tspan font-family="Arial" font-size="12" font-weight="500" x="12.321289" y="25.392578" textLength="51.35742">Resource</tspan>
       </text>
       <line x1="133.5" y1="762.09095" x2="272.0814" y2="762.98335" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       <rect x="149.2767" y="750.0274" width="104" height="25" fill="white"/>
@@ -91,36 +89,29 @@
       <text transform="translate(177.53932 812.437)" fill="black">
         <tspan font-family="Arial" font-size="12" font-weight="500" x=".32421875" y="11" textLength="75.35156">serviceclass[ ]</tspan>
       </text>
-      <rect x="61.25" y="512.5" width="116" height="25" fill="white"/>
-      <text transform="translate(66.25 517.8037)" fill="black">
-        <tspan font-family="Arial" font-size="12" font-weight="bold" x=".3095703" y="11" textLength="105.38086">Service Consumer</tspan>
+      <rect x="66.25" y="512.5" width="106" height="25" fill="white"/>
+      <text transform="translate(71.25 517.8037)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="bold" x=".32226562" y="11" textLength="95.35547">Cluster Operator</tspan>
       </text>
       <g id="id114_Graphic">
-        <rect x="408.48875" y="580.9441" width="22" height="25" fill="white"/>
-        <rect x="408.48875" y="580.9441" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-        <text transform="translate(413.48875 586.2478)" fill="black">
+        <rect x="408.7893" y="729.5658" width="22" height="25" fill="white"/>
+        <rect x="408.7893" y="729.5658" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(413.7893 734.8695)" fill="black">
           <tspan font-family="Arial" font-size="12" font-weight="500" x=".9960938" y="11" textLength="10.007812">2.</tspan>
         </text>
       </g>
       <g id="id115_Graphic">
-        <rect x="408.7893" y="729.5658" width="22" height="25" fill="white"/>
-        <rect x="408.7893" y="729.5658" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-        <text transform="translate(413.7893 734.8695)" fill="black">
+        <rect x="198.8721" y="778.5804" width="22" height="25" fill="white"/>
+        <rect x="198.8721" y="778.5804" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(203.8721 783.8841)" fill="black">
           <tspan font-family="Arial" font-size="12" font-weight="500" x=".9960938" y="11" textLength="10.007812">3.</tspan>
         </text>
       </g>
       <g id="id66_Graphic">
-        <rect x="264.2442" y="569.1922" width="22" height="25" fill="white"/>
-        <rect x="264.2442" y="569.1922" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-        <text transform="translate(269.2442 574.4959)" fill="black">
+        <rect x="198.8721" y="549.1181" width="22" height="25" fill="white"/>
+        <rect x="198.8721" y="549.1181" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(203.8721 554.42184)" fill="black">
           <tspan font-family="Arial" font-size="12" font-weight="500" x=".9960938" y="11" textLength="10.007812">1.</tspan>
-        </text>
-      </g>
-      <g id="id116_Graphic">
-        <rect x="198.8721" y="778.5804" width="22" height="25" fill="white"/>
-        <rect x="198.8721" y="778.5804" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-        <text transform="translate(203.8721 783.8841)" fill="black">
-          <tspan font-family="Arial" font-size="12" font-weight="500" x=".9960938" y="11" textLength="10.007812">4.</tspan>
         </text>
       </g>
       <rect x="545.25" y="652" width="85" height="46" fill="white"/>
@@ -129,6 +120,7 @@
         <tspan font-family="Arial" font-size="13" font-weight="500" fill="black" x="20.158203" y="12" textLength="38.29541">List of </tspan>
         <tspan font-family="Arial" font-size="13" font-weight="500" fill="black" x="12.575928" y="27.425293" textLength="49.848145">Services</tspan>
       </text>
+      <line x1="133" y1="581.1922" x2="271.5814" y2="582.0846" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
     </g>
   </g>
 </svg>
